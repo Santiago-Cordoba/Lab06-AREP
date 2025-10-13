@@ -32,6 +32,25 @@ La arquitectura del proyecto sigue un **modelo cliente-servidor** con tres capas
 
 ![descripcion](img/img_4.png)
 
+## Seguridad
+
+AppSegura implementa varias capas de seguridad para proteger la información del usuario y la comunicación entre cliente y servidor:
+
+- **Autenticación segura:**  
+  Los usuarios deben proporcionar un nombre de usuario y contraseña para acceder a la aplicación. El backend valida las credenciales y permite el acceso únicamente a usuarios registrados.
+
+- **Encriptación de contraseñas:**  
+  Las contraseñas se procesan mediante un algoritmo de hashing seguro (BCrypt) antes de ser comparadas durante el inicio de sesión, evitando el uso de contraseñas en texto plano.
+
+- **Comunicación segura (HTTPS):**  
+  Toda la comunicación entre el navegador y el servidor web se realiza mediante HTTPS, lo que asegura que los datos transmitidos estén encriptados y protegidos contra interceptaciones.
+
+- **Control de acceso:**  
+  Las páginas internas, como el dashboard, solo son accesibles después de la autenticación correcta. Si un usuario no autorizado intenta acceder, se le redirige al login.
+
+- **CORS seguro:**  
+  El backend permite únicamente solicitudes desde los orígenes configurados, evitando que sitios externos realicen peticiones no autorizadas.
+
 ## Muestras desarrollo (Certificados y dominios)
 
 ### IP Elastica
